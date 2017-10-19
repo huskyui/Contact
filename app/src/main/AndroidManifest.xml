@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.android.contact">
+    <!--
+    icon是app图标
+    任何activity都要在AndroidManifest里面注册才能实现跳转
+    实现了一个启动页3秒，首先就是设置主页面，任何设置时间
+
+    -->
+
+    <application
+
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_contact_launcher"
+
+
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"
+            android:label="通讯录">
+
+        </activity>
+
+        <activity android:name=".LaunchActivity"
+            android:theme="@style/LaunchTheme"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AddActivity"
+            android:label="添加联系人"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"
+                />
+            <!--以上5行代码，可以实现在AddActivity有一个返回键，返回MainActivity-->
+        </activity>
+        <activity android:name=".CallActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+    </application>
+
+</manifest>
