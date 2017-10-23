@@ -10,8 +10,14 @@
         app:showAsAction="always"
         />
     <item
+        android:id="@+id/action_importAllPerson"
+        android:title="导入系统通讯录"
+        app:showAsAction="never"
+        />
+    <item
         android:id="@+id/action_clear"
         android:title="清空"
         app:showAsAction="never"
         />
+
 </menu>
